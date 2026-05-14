@@ -7,6 +7,7 @@ const uploadRoutes = require('./routes/upload');
 const jobsRoutes = require('./routes/jobs');
 const socket = require('./socket');
 const rateLimit = require('./middleware/rateLimit');
+require('dotenv').config();
 
 const PORT = process.env.PORT || 3001;
 
@@ -15,6 +16,7 @@ app.use(cors({
   methods: ['GET', 'POST'],
 }));
 app.use(express.json());
+app.options('*', cors());
 
 // Rate limiting for upload and cancel endpoints
 app.use('/upload', rateLimit);
