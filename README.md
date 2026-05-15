@@ -2,6 +2,10 @@
 
 A real-time file upload tracker built with Next.js and Express. Upload documents and watch them move through simulated processing stages with live progress updates via WebSocket.
 
+## Live Demo
+[![Live Demo](https://img.shields.io/badge/demo-live-green.svg)](https://livestatustracker.namansingh.dev/)
+
+
 ## Features
 
 - Real-time status updates using Socket.IO (no polling)
