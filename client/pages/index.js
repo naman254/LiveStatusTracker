@@ -73,6 +73,10 @@ export default function Home() {
     const results = [];
     for (let i = 0; i < files.length; i++) {
       try {
+        if (files[i].size > 10 * 1024 * 1024) {
+          throw new Error('File exceeds the 10MB limit.');
+        }
+
         const fd = new FormData();
         fd.append('file', files[i]);
         const res = await fetch(`${API}/upload`, {
